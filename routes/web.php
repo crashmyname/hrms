@@ -21,3 +21,8 @@ use App\Http\Controllers\EmployeeController;
 Route::get('/',[HomeController::class, 'index'])->name('dashboard');
 Route::get('/employee',[EmployeeController::class,'index'])->name('employee');
 Route::get('/employeeserverside',[EmployeeController::class,'json'])->name('json_employees');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/bcrypt',[EmployeeController::class, 'bcrypt'])->name('bc');
+Route::post('/bcrypt',[EmployeeController::class, 'pbcrypt'])->name('encryption');

@@ -58,23 +58,13 @@
     <div class="sidebar-menu">
         <ul class="menu">
             <li class="sidebar-title">Menu</li>
-            @if($title == "Dashboard")
             <li
-                class="sidebar-item active ">
+                class="sidebar-item {{$title == 'Dashboard' ? 'active' : ''}} ">
                 <a href="{{route('dashboard')}}" class='sidebar-link'>
                     <i class="bi bi-grid-fill"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
-            @else
-            <li
-                class="sidebar-item ">
-                <a href="{{route('dashboard')}}" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>
-            @endif
             <li
                 class="sidebar-item  has-sub">
                 <a href="#" class='sidebar-link'>
@@ -123,18 +113,14 @@
                     </li>
                 </ul>
             </li>
-            @if($title == "Employee Data")
             <li
-                class="sidebar-item  has-sub active">
+                class="sidebar-item  has-sub {{$title == 'Employee Data' ? 'active' : ''}}">
                 <a href="#" class='sidebar-link'>
                     <i class="bi bi-stack"></i>
                     <span>Employees</span>
                 </a>
-                <ul class="submenu active">
-                    {{-- <li class="submenu-item ">
-                        <a href="component-alert.html">Add Employee</a>
-                    </li> --}}
-                    <li class="submenu-item active">
+                <ul class="submenu {{$title == 'Employee Data' ? 'active' : ''}}">
+                    <li class="submenu-item {{$title == 'Employee Data' ? 'active' : ''}}">
                         <a href="{{route('employee')}}">Employee Data</a>
                     </li>
                     <li class="submenu-item ">
@@ -145,29 +131,6 @@
                     </li>
                 </ul>
             </li>
-            @else
-            <li
-                class="sidebar-item  has-sub">
-                <a href="#" class='sidebar-link'>
-                    <i class="bi bi-stack"></i>
-                    <span>Employees</span>
-                </a>
-                <ul class="submenu ">
-                    <li class="submenu-item ">
-                        <a href="component-alert.html">Add Employee</a>
-                    </li>
-                    <li class="submenu-item ">
-                        <a href="{{route('employee')}}">Employee Data</a>
-                    </li>
-                    <li class="submenu-item ">
-                        <a href="component-badge.html">Employee Transfer</a>
-                    </li>
-                    <li class="submenu-item ">
-                        <a href="component-badge.html">Check Employee Education</a>
-                    </li>
-                </ul>
-            </li>
-            @endif
             <li
                 class="sidebar-item  has-sub">
                 <a href="#" class='sidebar-link'>

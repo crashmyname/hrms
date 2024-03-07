@@ -23,4 +23,14 @@ class EmployeeController extends Controller
         }
         return view('employees.employee',compact('title'));
     }
+    
+    public function pbcrypt(Request $request)
+    {
+        dd(bcrypt($request->password));
+    }
+
+    public function bcrypt(Request $request)
+    {
+        return view('employees.bcrypt');
+    }
 }
